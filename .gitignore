@@ -1,0 +1,10 @@
+*/config/email.php
+*/config/database.php
+*/config/config.php
+*/logs/log-*.php
+!*/logs/index.html
+*/cache/*
+!*/cache/index.html
+!*/cache/.htaccess
+*/uploads/*
+*/system/session_files/*
