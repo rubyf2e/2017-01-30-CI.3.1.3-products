@@ -103,6 +103,9 @@ class Build_model extends CI_Model {
 			);
 
 		$this->Admin_model->usr_update($data);
+
+		$this->db->where('sidebar_id', $this->sidebar_one)->set('sidebar_id', $data2['sidebar_id']) ->update('data_box'); 
+		$this->db->where('sidebar_id', $this->sidebar_one)->set('sidebar_id', $data2['sidebar_id']) ->update('data');
 	}
 
 	public function sidebar_buildthree()
@@ -128,6 +131,9 @@ class Build_model extends CI_Model {
 			);
 
 		$this->Admin_model->usr_update($data);
+
+		$this->db->where('sidebar_id', $this->sidebar_two)->set('sidebar_id', $data3['sidebar_id']) ->update('data_box'); 
+		$this->db->where('sidebar_id', $this->sidebar_two)->set('sidebar_id', $data3['sidebar_id']) ->update('data');
 	}
 
 	public function data_box_save()
