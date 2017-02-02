@@ -190,6 +190,8 @@ class Login_controller extends CI_Controller {
 
 	public function sample()
 	{
+		$this->Login_model->user_account = 'sample';
+		$this->Login_model->user_sidebar('sample');
 		$this->set_session(0);
 		redirect($this->index, 'refresh');
 	}
