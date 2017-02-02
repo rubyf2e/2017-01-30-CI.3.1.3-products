@@ -2,10 +2,8 @@
 
 class Main_controller extends CI_Controller {
 	
-	var $data_boxone   = '';
-	var $data_boxtwo   = '';
-	var $data_boxthree = '';
-	var $detail_array  = array();
+	var $index        = '';
+	var $detail_array = array();
 
 	function __construct()
 	{
@@ -62,6 +60,8 @@ class Main_controller extends CI_Controller {
 
 	public function save($sidebar_id, $upload_difference)
 	{
+		$this->index = "main_controller/index/{$sidebar_id}";
+		$this->share->check_sample();
 		$result_array  = $this->main_model->data_box($sidebar_id);
 		foreach ($result_array as $row) 
 		{
