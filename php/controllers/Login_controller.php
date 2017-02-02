@@ -5,12 +5,14 @@ class Login_controller extends CI_Controller {
 	private $admin_refresh = FALSE;
 	private $login_refresh = FALSE;
 	var $check_email = '';
+	var $index       = '';
 
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Login_model');
 		$this->check_email = $this->input->post('check_email');
+		$this->index       = $this->config->item('index_url');
 
 	}
 
@@ -68,7 +70,7 @@ class Login_controller extends CI_Controller {
 
 		if ($this->admin_refresh === TRUE)
 		{
-			redirect('main_controller/index_introduction', 'refresh');
+			redirect($this->index, 'refresh');
 		}
 		else
 		{
@@ -118,7 +120,7 @@ class Login_controller extends CI_Controller {
 		if ($this->admin_refresh === TRUE)
 		{
 
-			redirect('main_controller/index_introduction', 'refresh');
+			redirect($this->index, 'refresh');
 		}
 		else
 		{				
@@ -184,6 +186,12 @@ class Login_controller extends CI_Controller {
 			);
 		$this->session->set_userdata($data);
 
+	}
+
+	public function sample()
+	{
+		$this->set_session(0);
+		redirect($this->index, 'refresh');
 	}
 
 	public function logout()
