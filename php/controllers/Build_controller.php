@@ -214,6 +214,7 @@ class Build_controller extends CI_Controller {
 
 	public function sidebar_buildone()
 	{
+		$this->share->check_sample();
 		$this->Build_model->sidebar_buildone();
 		$this->Admin_model->log('建立側邊欄第一層', $this->Build_model->sidebar_one);
 		redirect($this->index, 'refresh');
@@ -221,6 +222,7 @@ class Build_controller extends CI_Controller {
 
 	public function sidebar_buildtwo()
 	{
+		$this->share->check_sample();
 		$this->Build_model->sidebar_buildtwo();
 		$this->Admin_model->log('建立側邊欄第二層', $this->Build_model->sidebar_two);
 		redirect($this->index, 'refresh');
@@ -230,6 +232,7 @@ class Build_controller extends CI_Controller {
 	{
 		if($this->Build_model->sidebar_two)
 		{
+			$this->share->check_sample();
 			$this->Build_model->sidebar_buildthree();
 			$this->Admin_model->log('建立側邊欄第三層', $this->Build_model->sidebar_three);
 		}
@@ -245,6 +248,7 @@ class Build_controller extends CI_Controller {
 	{
 		if($this->box_id)
 		{
+			$this->share->check_sample();
 			$this->Build_model->build_detail();
 			$this->Admin_model->log('建立內容設定', $this->Build_model->target_id);
 			redirect("main_controller/index/{$this->Build_model->target_id}", 'refresh');
@@ -258,6 +262,7 @@ class Build_controller extends CI_Controller {
 
 	public function data_box_save()
 	{
+		$this->share->check_sample();
 		$this->Build_model->data_box_save();
 		$this->Admin_model->log('建立視窗盒子', $this->Build_model->target_id);
 		redirect($this->index, 'refresh');
