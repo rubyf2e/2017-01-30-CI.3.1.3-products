@@ -46,6 +46,7 @@ include_once('html/main/sidebar.php');
                 此網為使用者可以直接藉由後台的欄位新增操作建立專屬自己的後台，在製作過程中亦盡量兼顧自適應網頁的需求。
                 因時間有限，故無用網站後台常用的功能製作，資料亦皆存入同一張資料表，僅用功能的方式呈現後台可以用類似的技術製作，資料表的地方亦可用填選的方式建立，在套版網站功能相似時可以用這樣的方式減少建立後台的時間。
               </p>
+              <a href='<?=site_url('login_controller/sample')?>' target='_blank' style='color:#9c33ff'>使用範例</a>
             </div>
             <div class="tab-pane" id="tab1">
               <p class="lead">使用說明</p>
