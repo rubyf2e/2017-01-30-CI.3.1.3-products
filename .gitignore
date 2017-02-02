@@ -6,7 +6,5 @@
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
-*/uploads/*
-*/system/session_files/*
-*/system/session_files/
-*/uploads/
+/system/session_files/
+/uploads/
