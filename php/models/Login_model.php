@@ -25,7 +25,11 @@ class Login_model extends CI_Model {
 		$this->login_captcha  = $this->input->post('login_captcha');
 		$this->forget_captcha = $this->input->post('forget_captcha');
 		$this->add_captcha    = $this->input->post('add_captcha');
-
+		$this->user_sidebar($this->user_account);
+	}
+	
+	public function user_sidebar($user_account)
+	{
 		$row_array            = $this->db
 		->select('user_sidebar_one, user_sidebar_two, user_sidebar_three')
 		->get_where('user', array('user_account' => $this->user_account))
@@ -34,7 +38,6 @@ class Login_model extends CI_Model {
 		$this->user_sidebar_one    = $row_array['user_sidebar_one'];
 		$this->user_sidebar_two    = $row_array['user_sidebar_two'];
 		$this->user_sidebar_three  = $row_array['user_sidebar_three'];
-
 	}
 	
 	public function user_id($user_account)
