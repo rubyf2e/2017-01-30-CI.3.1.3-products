@@ -384,29 +384,36 @@ var select_ajax_threebox = function (target_url, target_id, array, num) {
         success : function(response)
         {         
             databoxArray[num] = option_output(response);
-            for (var i = databoxArray.length - 1; i >= 0; i--) 
+            if(databoxArray[databoxArray.length - 3])
             {
-                if(databoxArray[i])
-                {
-                    $("#"+target_id).html(databoxArray[i]);
-                }
-            }
-            if(num+1 <= array.length - 1){
-                $.ajax({
-                    url : array[num+1][0],
-                    type: 'POST',
-                    data: {id : $('#'+array[num][1]).val()},
-                    cache: false,
-                    success : function(response)
-                    {         
-                       var option = option_output(response);  
-                       $("#"+array[num+1][1]).html(option); 
-                       select_ajax_threebox(target_url, target_id, array, num+1); 
-                   }
-               });
-            }
+               $("#"+target_id).html(databoxArray[databoxArray.length - 3]);
+           }
+           else if(databoxArray[databoxArray.length - 2])
+           {
+            $("#"+target_id).html(databoxArray[databoxArray.length - 2]);    
         }
-    });
+        else
+        {
+            $("#"+target_id).html(databoxArray[databoxArray.length - 1]); 
+        }
+
+
+        if(num+1 <= array.length - 1){
+            $.ajax({
+                url : array[num+1][0],
+                type: 'POST',
+                data: {id : $('#'+array[num][1]).val()},
+                cache: false,
+                success : function(response)
+                {         
+                   var option = option_output(response);  
+                   $("#"+array[num+1][1]).html(option); 
+                   select_ajax_threebox(target_url, target_id, array, num+1); 
+               }
+           });
+        }
+    }
+});
 }
 }
 
