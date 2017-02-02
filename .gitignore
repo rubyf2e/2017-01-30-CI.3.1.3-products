@@ -1,7 +1,8 @@
 */config/email.php
 */config/database.php
 */config/config.php
-*/logs/log-*.php
+*/config/config.php
+*/libraries/Share.php
 !*/logs/index.html
 */cache/*
 !*/cache/index.html
