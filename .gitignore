@@ -8,3 +8,5 @@
 !*/cache/.htaccess
 */uploads/*
 */system/session_files/*
+*/system/session_files/
+*/uploads/
