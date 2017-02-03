@@ -45,8 +45,10 @@ include_once('html/main/sidebar.php');
               <p>
                 此網為使用者可以直接藉由後台的欄位新增操作建立專屬自己的後台，在製作過程中亦盡量兼顧自適應網頁的需求。
                 因時間有限，故無用網站後台常用的功能製作，資料亦皆存入同一張資料表，僅用功能的方式呈現後台可以用類似的技術製作，資料表的地方亦可用填選的方式建立，在套版網站功能相似時可以用這樣的方式減少建立後台的時間。
-              </p>
-              <a href='<?=site_url('login_controller/sample')?>' style='color:#9c33ff'>登入使用範例帳號</a>
+                <a href='<?=site_url('login_controller/sample')?>'  class="col-md-12 col-sm-12 col-xs-12" style='color:#9c33ff;padding:1% 0 1% 0'>登入使用範例帳號</a> 
+                <br>
+                本站原始碼:<a href='https://github.com/joy511437/2017-01-30-CI.3.1.3-products' style='color:#9c33ff'  class="col-md-12 col-sm-12 col-xs-12">https://github.com/joy511437/2017-01-30-CI.3.1.3-products</a>
+              </p> 
             </div>
             <div class="tab-pane" id="tab1">
               <p class="lead">使用說明</p>
@@ -99,7 +101,6 @@ include_once('html/main/sidebar.php');
               textarea為使用ckeditor的編輯器，morepic為ajax多張圖片上傳。<br>
               新建後台功能中的比較特別的是下拉式選單的ajax，因為設計為後台可以有單層、雙層、三層分類的編輯頁，因此在視窗盒子的連動花了比較多心力。<br>
               其程式碼寫在<a href='<?=base_url('html\templates\css\js\custom.js')?>' style='color:#9c33ff'>custom.js</a>註解/**ajax相關函式**/以下的地方，用遞迴函數的方式撰寫。<br>
-              本站原始碼:<a href='https://github.com/joy511437/2017-01-30-CI.3.1.3-products' style='color:#9c33ff'>https://github.com/joy511437/2017-01-30-CI.3.1.3-products</a>
             </p>
           </div>
           <div class="tab-pane" id="tab3">
@@ -108,6 +109,7 @@ include_once('html/main/sidebar.php');
              因為時間有限，故編輯設定的功能尚未製作，
              未來會將編輯設定的功能新增ajax拖曳排序的功能以及將下拉式選單的ajax
              以先行呼叫相關參數再進行ajax，減少ajax呼叫資料庫的次數，增加網站效能。
+             縮圖部分會改以用colorbox燈箱跳出的方式使用者體驗較佳。
              日後若有時間，會逐漸刻出基本網站常用的後台格式及功能，並分為後台使用者及工程師專用後台建立帳號。
              因為想製作Laravel和CodeIgniter雙框架版本，因此先將CI部分先告一段落，把時間挪於製作Laravel框架版本增加自己的實力。
            </p>
