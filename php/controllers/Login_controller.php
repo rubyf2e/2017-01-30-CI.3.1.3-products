@@ -55,6 +55,7 @@ class Login_controller extends CI_Controller {
 						$this->admin_refresh = TRUE;
 						$user_id = $this->Login_model->user_id($this->Login_model->user_account);
 						$this->set_session($user_id);
+						$this->Admin_model->log('登入', $user_id);
 					}
 					else
 					{
@@ -107,13 +108,13 @@ class Login_controller extends CI_Controller {
 			}
 			else
 			{
-				$user_id = 'test';
 				$user_id = $this->Login_model->add();
 				$this->admin_refresh = TRUE;
 				if (!is_dir($this->upload->upload_path.$user_id)) {
 					mkdir($this->upload->upload_path.$user_id, 0777, TRUE);
 				}
 				$this->set_session($user_id);
+				$this->Admin_model->log('登入', $user_id);
 			}
 		}
 
@@ -193,6 +194,8 @@ class Login_controller extends CI_Controller {
 		$this->Login_model->user_account = 'sample';
 		$this->Login_model->user_sidebar('sample');
 		$this->set_session(0);
+		$this->Admin_model->log('範例帳號登入');
+
 		redirect($this->index, 'refresh');
 	}
 
