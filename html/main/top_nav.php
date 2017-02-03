@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
             </li>
             <li>
-              <a title="<?=$edit_title?>" href="<?=$add_url?>">
+              <a title="<?=$edit_title?>" href="<?=$edit_url?>">
                 <i class="glyphicon glyphicon-edit pull-right"></i>
                 <?=$edit_title?>
               </a>
